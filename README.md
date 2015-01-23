@@ -15,19 +15,19 @@ Following are pre-requisites to prepare environment.
 * Modify the environment specific parameters from file 'src/main/resource/persomap-config.yml' 
 
   1. AWS Configuration
-     **AWS access key parameter**
+     *AWS access key 
      *access_key_id : AWS_ACCESS_KEY_ID*
 
-     **AWS Secret access key parameter**
+     *AWS Secret access key parameter
      *secret_access_key : AWS_ACCESS_SECRET_KEY*
 
   2. DynamoDB Configuration
 
-     **Dynamo DB Table name**
+     *Dynamo DB Table name
       *dynamodb_table_name : DYNAMODB_TABLE_NAME*
 
-     **AWS DynamoDB Endpoint URL**
-      *aws_endpoint_url : http://IpAddress:port*
+     *AWS DynamoDB Endpoint URL
+     *aws_endpoint_url : http://IpAddress:port*
 
   3. Elastic Cache Configuration
      *aws_cache_url : IPAddress:port*
@@ -36,12 +36,12 @@ Following are pre-requisites to prepare environment.
       server:
         applicationConnectors:
          - type: http
-           *port: 80*
+           port: 80
        adminConnectors:
          - type: http
-           *port: 8081*
+           port: 8081
 
-  5. **Environment_name : DEV (For production value should be 'Prod')**
+  5. *Environment_name : DEV (For production value should be 'Prod')
       This value should take care the creation of dynamodb-local instance.
 
 ## Build
@@ -77,4 +77,3 @@ Check that a new jar will be created under /target folder.
 
   3. environment_name : DEV
      Keep environment name as DEV for locally only, This will automatically create a local DynamoDB table.
-
