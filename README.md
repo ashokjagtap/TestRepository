@@ -13,39 +13,27 @@ Following are pre-requisites to prepare environment.
 * Make sure that Java1.7 and Maven should be installed on machine.
 * Download source code from GitHUB<<https://github.com/adswizz/cybage-persomap>>
 * Modify the environment specific parameters from file 'src/main/resource/persomap-config.yml' 
+AWS Configuration
+* access_key_id : AWS_ACCESS_KEY_ID
+* secret_access_key : AWS_ACCESS_SECRET_KEY
 
-   -AWS Configuration
-     **#AWS access key **
-       -access_key_id : AWS_ACCESS_KEY_ID
+DynamoDB Configuration
+* dynamodb_table_name : DYNAMODB_TABLE_NAME
+* aws_endpoint_url : http://IpAddress:port
 
-     **#AWS Secret access key parameter**
-       -secret_access_key : AWS_ACCESS_SECRET_KEY
+Elastic Cache Configuration
+* aws_cache_url : IPAddress:port
+Server port Configuration
+* server:
+  applicationConnectors:
+  - type: http
+  port: 80
+  adminConnectors:
+  - type: http
+  port: 8081
 
-  -DynamoDB Configuration
-
-     **#Dynamo DB Table name**
-       -dynamodb_table_name : DYNAMODB_TABLE_NAME
-
-     **#AWS DynamoDB Endpoint URL**
-       -aws_endpoint_url : http://IpAddress:port
-
-     *AWS DynamoDB Endpoint URL
-     *aws_endpoint_url : http://IpAddress:port*
-
-  3. Elastic Cache Configuration
-     *aws_cache_url : IPAddress:port*
-
-  4. Server port Configuration
-      server:
-        applicationConnectors:
-         - type: http
-           port: 80
-       adminConnectors:
-         - type: http
-           port: 8081
-
-  5. *Environment_name : DEV (For production value should be 'Prod')
-      This value should take care the creation of dynamodb-local instance.
+* Environment_name : DEV (For production value should be 'Prod')
+This value should take care the creation of dynamodb-local instance.
 
 ## Build
 **build from the command line **
@@ -72,11 +60,14 @@ Check that a new jar will be created under /target folder.
 
 * Check the Swagger API on application port using url as http://localhost:80/swagger
 
-* For Windows local Development following things to take care:-
+## pre-requisites for local Development(Windows)
 
-  1. Download the memcached client from site http://memcached.org/downloads and run memcached.exe file.
+* Download the memcached client from site http://memcached.org/downloads and run memcached.exe file.
 
-  2. For local DynamoDB instance download it from http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.zip and unzip it and open  command prompt in same folder and run it with command 'java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar'
+* For local DynamoDB instance download it from http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.zip and unzip it and open  command prompt in same folder and run it with command
+```javascript
+ 'java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar'
+```
 
-  3. environment_name : DEV
-     Keep environment name as DEV for locally only, This will automatically create a local DynamoDB table.
+* environment_name : DEV
+ Keep environment name as DEV for locally only, This will automatically create a local DynamoDB table.
