@@ -12,28 +12,29 @@ Following are pre-requisites to prepare environment.
 
 * Make sure that Java1.7 and Maven should be installed on machine.
 * Download source code from GitHUB<<https://github.com/adswizz/cybage-persomap>>
-* Modify the environment specific parameters from file 'src/main/resource/persomap-config.yml' 
-AWS Configuration
+* Modify the environment specific parameters from file 'src/main/resource/persomap-config.yml'
+
+##### AWS Configuration
 * access_key_id : AWS_ACCESS_KEY_ID
 * secret_access_key : AWS_ACCESS_SECRET_KEY
 
-DynamoDB Configuration
+##### DynamoDB Configuration
 * dynamodb_table_name : DYNAMODB_TABLE_NAME
 * aws_endpoint_url : http://IpAddress:port
 
-Elastic Cache Configuration
+##### Elastic Cache Configuration
 * aws_cache_url : IPAddress:port
-Server port Configuration
-* server:
-  applicationConnectors:
-  - type: http
-  port: 80
-  adminConnectors:
-  - type: http
-  port: 8081
 
-* Environment_name : DEV (For production value should be 'Prod')
-This value should take care the creation of dynamodb-local instance.
+##### Server port Configuration
+server:
+applicationConnectors:
+- type: http
+port: 80
+adminConnectors:
+- type: http
+port: 8081
+
+* Environment_name : DEV - This value should take care the creation of dynamodb-local instance and For prodcution value should be 'PROD'.
 
 ## Build
 **build from the command line **
@@ -71,3 +72,5 @@ Check that a new jar will be created under /target folder.
 
 * environment_name : DEV
  Keep environment name as DEV for locally only, This will automatically create a local DynamoDB table.
+
+## Release Notes
