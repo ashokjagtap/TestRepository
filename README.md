@@ -63,7 +63,7 @@ Check that a new jar will be created under /target folder.
 
 * Check the Swagger API on application port using url as http://localhost:80/swagger
 
-## Pre-requisites for local Development(Windows)
+## Pre-requisites for Local Development(Windows)
 
 * Download the memcached client from site http://memcached.org/downloads and run memcached.exe file.
 
