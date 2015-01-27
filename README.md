@@ -34,7 +34,7 @@ adminConnectors:
 - type: http
 port: 8081
 
-* Environment_name : DEV - This value should take care the creation of dynamodb-local instance and For prodcution value should be 'PROD'.
+**Environment_name : DEV ** - This value should take care the creation of dynamodb-local instance and For prodcution value should be 'PROD'.
 
 ## Build
 ** Build from the command line **
