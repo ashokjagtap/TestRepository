@@ -11,7 +11,7 @@ Persomap module is basically mapping the user ids and following 3 different API 
 Following are pre-requisites to prepare environment.
 
 * Make sure that Java1.7 and Maven should be installed on machine.
-* Download source code from GitHUB<<https://github.com/adswizz/cybage-persomap>>
+* Download source code from   GitHUB  <<https://github.com/adswizz/cybage-persomap>>
 * Modify the environment specific parameters from file 'src/main/resource/persomap-config.yml'
 
 ##### AWS Configuration
@@ -26,18 +26,19 @@ Following are pre-requisites to prepare environment.
 * aws_cache_url : IPAddress:port
 
 ##### Server port Configuration
+```javascript
 server:
-applicationConnectors:
-- type: http
-port: 80
-adminConnectors:
-- type: http
-port: 8081
-
-*Environment_name : DEV * - This value should take care the creation of dynamodb-local instance and For prodcution value should be 'PROD'.
+    applicationConnectors:
+      - type: http
+        port: 8080
+    adminConnectors:
+      - type: http
+        port: 8081
+```
+**Environment_name : DEV ** - This value should take care the creation of dynamodb-local instance and For prodcution value should be 'PROD'.
 
 ## Build
-* Build from the command line *
+** Build from the command line **
 
 * To Create the new persomap jar use following command.
 ```javascript
@@ -61,7 +62,7 @@ Check that a new jar will be created under /target folder.
 
 * Check the Swagger API on application port using url as http://localhost:80/swagger
 
-## pre-requisites for local Development(Windows)
+## Pre-requisites for local Development(Windows)
 
 * Download the memcached client from site http://memcached.org/downloads and run memcached.exe file.
 
